@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francesca's Microinteraction</title>
+
+    <!--linking font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!--linking css stylesheets-->
+    <link rel="stylesheet" href = "css/normalize.css">
+    <link rel="stylesheet" href = "css/screen.css">
+
+</head>
+<body>
+    <div class="centered">
+        <h1>francesca's quickview - alpha details</h1>
+
+        <div class="sector">
+            <h3>1. URL to Original Interface:</h3>
+            <a href="https://francescas.com/category/jewelry/charm-bar" target="_blank">Francesca's Charm Bar</a>
+        </div>
+
+        <div class="sector">
+            <h3>2. Triggers:</h3>
+            <p class="list-title">"Add to Cart" button on the bottom right corner of the quickview modal in a product card</p>
+            <ul>
+                <li>Hover on</li>
+                <li>Hover off</li>
+                <li>Click</li>
+            </ul>
+        </div>
+
+        <div class="sector">
+            <h3>3. Rules:</h3>
+            <p class="list-title">"Add to Cart" button</p>
+            <ul>
+                <li>Hover on</li>
+                    <ul>
+                        <li>Cursor changes to finger</li>
+                        <li>Background of button changes color to black, text changes to white</li>
+                    </ul>
+                <li>Hover off</li>
+                    <ul>
+                        <li>Cursor changes to arrow</li>
+                        <li>Background of button changes color to white, text changes to black</li>
+                    </ul>
+                <li>Click</li>
+                    <ul>
+                        <li>Text changes to “Adding...” with a spinning open circle indicating a loading sign</li>
+                        <li>After a second or two, the text changes to “Added!” with a checkmark icon next to it</li>
+                        <li>Adds item to the user's cart in the database</li>
+                    </ul>
+            </ul>
+        </div>
+
+        <div class="sector">
+            <h3>4. Feedback:</h3>
+            <p class="list-title">"Add to Cart" button</p>
+            <ul>
+                <li>Hover on</li>
+                    <ul>
+                        <li>Cursor changes to finger</li>
+                        <li>Background of button changes color to black, text changes to white</li>
+                    </ul>
+                <li>Hover off</li>
+                    <ul>
+                        <li>Cursor changes to arrow</li>
+                        <li>Background of button changes color to white, text changes to black</li>
+                    </ul>
+                <li>Click</li>
+                    <ul>
+                        <li>Text changes to “Adding...” with a spinning open circle indicating a loading sign</li>
+                        <li>After a second or two, the text changes to “Added!” with a checkmark icon next to it</li>
+                    </ul>
+            </ul>
+        </div>
+
+        <div class="sector">
+            <h3>5. Loops & Modes:</h3>
+            <p class="list-title">LOOPS:</p>
+            <p class="list-title">"Add to Cart" button</p>
+            <ul>
+                <li>Click</li>
+                <ul>
+                    <li>Circle icon next to "Adding..." continues to spin until the text changes to "Added!" with a checkmark icon next to it and the item is officially added to the cart in the database</li>
+                </ul>
+            </ul>
+            <p class="list-title">MODES:</p>
+            <p class="list-title">None</p>
+        </div>
+
+        <img class="centered-img" src="add_to_cart.gif" alt="GIF of Add to Cart Button">
+    </div>
+</body>
+</html>

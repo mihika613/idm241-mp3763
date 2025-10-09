@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box; 
+  }
+  
+  /* colors & variables */
+  html {
+    --background-color: #ffffff;    
+    --font-color: #000000    
+  }
+  
+  /* implementing font */
+  @font-face {
+    font-family: 'Papyrus'; /* Name you choose */
+    src: url('./fonts/papyrus.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Montserrat', 'Helvetica', Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: 'Papyrus', 'Montserrat', 'Helvetica', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+  
+  h4, label {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  p, input, li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6em;
+  }
+
+  p.list-title {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0em;
+  }
+
+  ul {
+    margin-top: 0;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--font-color);
+  }
+
+  /* class styling */
+  .centered{
+    padding-left: 10vh;
+    padding-right: 10vh;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .sector {
+    padding-bottom: 5vh;
+  }
+
+  .centered-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 10vh;
+  }
