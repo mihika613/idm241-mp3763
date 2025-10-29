@@ -26,74 +26,243 @@
 
         <div class="sector">
             <h3>2. Triggers:</h3>
-            <p class="list-title">"Add to Cart" button on the bottom right corner of the quickview modal in a product card</p>
-            <ul>
-                <li>Hover on</li>
-                <li>Hover off</li>
-                <li>Click</li>
-            </ul>
+
+            <div class="element"> 
+                <p class="list-title">"Add to Cart" button on the bottom right corner of the quickview modal in a product card</p>
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </div>
+
+            <div class="element">
+                <p class="list-title">Quantity selector on the bottom middle of the quickview modal in a product card</p>
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </div>
+
+            <div class="element">
+                <p class="list-title">Image of product on the left side of the quickview modal</p>
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </div>
         </div>
 
         <div class="sector">
             <h3>3. Rules:</h3>
-            <p class="list-title">"Add to Cart" button</p>
-            <ul>
-                <li>Hover on</li>
-                    <ul>
-                        <li>Cursor changes to finger</li>
-                        <li>Background of button changes color to black, text changes to white</li>
-                    </ul>
-                <li>Hover off</li>
-                    <ul>
-                        <li>Cursor changes to arrow</li>
-                        <li>Background of button changes color to white, text changes to black</li>
-                    </ul>
-                <li>Click</li>
-                    <ul>
-                        <li>Text changes to “Adding...” with a spinning open circle indicating a loading sign</li>
-                        <li>After a second or two, the text changes to “Added!” with a checkmark icon next to it</li>
-                        <li>Adds item to the user's cart in the database</li>
-                    </ul>
-            </ul>
+            <div class="element"> 
+                <p class="list-title">"Add to Cart" button</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Background of button changes color from black to a light beige [#fff4ee] with a 1px light pink border [#e2b5b5]</li>
+                            <li>Text changes from white to black [#000000]</li>
+                            <li>Button scales to 105%</li>
+                            <li>Button has a dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)]</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Background color of button returns to black [#000000], with white text [#ffffff]</li>
+                            <li>Button removes the 1px light pink border [#e2b5b5] and the dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)]</li>
+                            <li>Button scales back to 100%</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Text changes to “Adding...” with a spinning open circle indicating a loading sign</li>
+                            <li>Button scales back to 100%</li>
+                            <li>A faded diagonal line/shimmer [shade #e2b5b5] angled 120 degrees with a subtle opacity fade begins a quick looping animation, moving left to right quickly, simulating loading and progress.</li>
+                            <li>After a second or two, the text changes to “Added!” with a checkmark icon next to it</li>
+                            <li>The button grows to 105% and back to 100% within the span of a half of a second, as a small pop effect to indicate completion.</li>
+                            <li>Background of the button changes to a light pink [#feeced]</li>
+                            <li>Adds item to the user's cart in the database</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Quantity Selector</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Background of button changes color from white to a light beige [#fff4ee] with a 1px light pink border [#e2b5b5]</li>
+                            <li>Button scales to 105%</li>
+                            <li>Button has a dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)]</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Background color of button returns to white [#ffffff], with black text [#000000]</li>
+                            <li>Button removes the 1px light pink border [#e2b5b5] and the dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)]</li>
+                            <li>Button scales back to 100%</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>For Increasing Quantity: Next number fades from 0% opacity to 100% opacity while dropping from top of quantity selector and overlays current number.</li>
+                            <li>For Decreasing Quantity: Previous number fades from 0% opacity to 100% opacity while coming up from bottom of quantity selector and overlays current number.</li>
+                            <li>Prepares to add updated number of items to the user's cart in the database</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Image of Product</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to a cross/plus sign</li>
+                            <li>Transparent, zoomed-in magnifying circle (180px x 180px) with dark gray 1px border appears and follows the user's mouse movement to show the image in more detail wherever the user's cursor is</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Magnifying circle fades away</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Sends user to the full product page</li>
+                        </ul>
+                </ul>
+            </div>
         </div>
 
         <div class="sector">
             <h3>4. Feedback:</h3>
-            <p class="list-title">"Add to Cart" button</p>
-            <ul>
-                <li>Hover on</li>
-                    <ul>
-                        <li>Cursor changes to finger</li>
-                        <li>Background of button changes color to black, text changes to white</li>
-                    </ul>
-                <li>Hover off</li>
-                    <ul>
-                        <li>Cursor changes to arrow</li>
-                        <li>Background of button changes color to white, text changes to black</li>
-                    </ul>
-                <li>Click</li>
-                    <ul>
-                        <li>Text changes to “Adding...” with a spinning open circle indicating a loading sign</li>
-                        <li>After a second or two, the text changes to “Added!” with a checkmark icon next to it</li>
-                    </ul>
-            </ul>
+            <div class="element"> 
+                <p class="list-title">"Add to Cart" button</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Background of button changes color from black to a light beige [#fff4ee] with a 1px light pink border [#e2b5b5]</li>
+                            <li>Text changes from white to black [#000000]</li>
+                            <li>Button scales to 105%</li>
+                            <li>Button has a dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)]</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Background color of button returns to black [#000000], with white text [#ffffff]</li>
+                            <li>Button removes the 1px light pink border [#e2b5b5] and the dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)]</li>
+                            <li>Button scales back to 100%</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Text changes to “Adding...” with a spinning open circle indicating a loading sign</li>
+                            <li>Button scales back to 100%</li>
+                            <li>A faded diagonal line/shimmer [shade #e2b5b5] begins a quick looping animation, moving left to right quickly, simulating loading and progress.</li>
+                            <li>After a second or two, the text changes to “Added!” with a checkmark icon next to it</li>
+                            <li>The button grows to 105% and back to 100% within the span of a half of a second, as a small pop effect to indicate completion.</li>
+                            <li>Background of the button changes to a light pink [#feeced]</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Quantity Selector</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Background of button changes color from white to a light beige [#fff4ee] with a 1px light pink border [#e2b5b5]</li>
+                            <li>Button scales to 105%</li>
+                            <li>Button has a dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)]</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Background color of button returns to white [#ffffff], with black text [#000000]</li>
+                            <li>Button removes the 1px light pink border [#e2b5b5] and the dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)]</li>
+                            <li>Button scales back to 100%</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>For Increasing Quantity: Next number fades from 0% opacity to 100% opacity while dropping from top of quantity selector and overlays current number.</li>
+                            <li>For Decreasing Quantity: Previous number fades from 0% opacity to 100% opacity while coming up from bottom of quantity selector and overlays current number.</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Image of Product</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to a cross/plus sign</li>
+                            <li>Transparent, zoomed-in magnifying circle (180px x 180px) with dark gray 1px border appears and follows the user's mouse movement to show the image in more detail wherever the user's cursor is</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Magnifying circle fades away</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Sends user to the full product page</li>
+                        </ul>
+                </ul>
+            </div>
         </div>
 
         <div class="sector">
             <h3>5. Loops & Modes:</h3>
-            <p class="list-title">LOOPS:</p>
-            <p class="list-title">"Add to Cart" button</p>
-            <ul>
-                <li>Click</li>
+            <p class="list-title"><b>LOOPS:</b></p>
+
+            <div class="element">
+                <p class="list-title">"Add to Cart" button</p>
                 <ul>
-                    <li>Circle icon next to "Adding..." continues to spin until the text changes to "Added!" with a checkmark icon next to it and the item is officially added to the cart in the database</li>
+                    <li>Click</li>
+                    <ul>
+                        <li>Circle icon next to "Adding..." continues to spin until the text changes to "Added!" with a checkmark icon next to it and the item is officially added to the cart in the database</li>
+                        <li>The faded diagonal line/shimmer continues to move left to right until the text changes to "Added!" with a checkmark icon next to it and the item is officially added to the cart in the database</li>
+                    </ul>
                 </ul>
-            </ul>
-            <p class="list-title">MODES:</p>
-            <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Quantity Selector</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Image of Product</p>
+                <p class="list-title">None</p>
+            </div>
+            
+            <p class="list-title"><b>MODES:</b></p>
+        
+            <div class="element"> 
+                <p class="list-title">"Add to Cart" button</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Quantity Selector</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Image of Product</p>
+                <p class="list-title">None</p>
+            </div>
         </div>
 
-        <img class="centered-img" src="add_to_cart.gif" alt="GIF of Add to Cart Button">
+        <img class="centered-img" src="new-add-to-cart-button.gif" alt="GIF of New Add to Cart Button">
+
+        <img class="centered-img" src="quantityselector.gif" alt="GIF of New Quantity Selector">
+
+        <img class="centered-img" src="magnifyingglassproductimage.gif" alt="GIF of New Image Microinteraction">
+
+        <img class="centered-img" src="productpagefrancescas.png" alt="Image of Product Page">
     </div>
 </body>
 </html>

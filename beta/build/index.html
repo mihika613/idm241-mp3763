@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francesca's Microinteraction</title>
+
+    <!--linking font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!--linking css stylesheets-->
+    <link rel="stylesheet" href = "css/normalize.css">
+    <link rel="stylesheet" href = "css/screen.css">
+
+</head>
+<body>
+    <div class="centered-container">
+        <h1>francesca's quickview - beta build</h1>
+
+        <!--Add to Cart Button-->
+        <div class="centered-button-container">
+            <button class="centered-element add-to-cart" id="addToCartBtn">
+                <span class="btn-text">Add to Cart</span>
+                <span class="shimmer"></span>
+              </button>
+        </div>
+
+        <!-- Quantity Selector -->
+        <div class="centered-button-container">
+            <div class="quantity-selector">
+            <button class="qty-btn decrease" id="decreaseQty">-</button>
+            <div class="qty-display" id="qtyDisplay">1</div>
+            <button class="qty-btn increase" id="increaseQty">+</button>
+            </div>
+        </div>
+
+        <!-- Image Zoom Microinteraction -->
+        <div class="image-zoom-container">
+            <img src="whiteflowercharm.jpg" alt="White Flower Charm" class="zoom-image" />
+            <div class="zoom-lens"></div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -82,6 +82,14 @@
     padding-bottom: 5vh;
   }
 
+  .element {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
+
   .centered-img {
     display: block;
     max-width: 100%;
@@ -89,3 +97,4 @@
     margin: 0 auto;
     padding-bottom: 10vh;
   }
+
