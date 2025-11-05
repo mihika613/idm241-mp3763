@@ -70,9 +70,43 @@
   }
 
   /* class styling */
+
+  /* Layout for centered horizontally elements */
   .centered-container {
+    display: flex;
+    flex-direction: row;         /* side-by-side on desktop */
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;             /* allows wrapping if space runs out */
+    gap: 4rem;                   /* space between elements */
+    text-align: center;
     padding-left: 10vh;
     padding-right: 10vh;
+  }
+
+  /* Make each section consistent in width and alignment */
+  .centered-horizontally-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 300px;             /* responsive width control */
+    max-width: 400px;
+  }
+
+  /* Stack vertically on mobile */
+  @media (max-width: 768px) {
+    .centered-container {
+      flex-direction: column;    /* stack vertically */
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.5vh 0;
+    }
+
+    .centered-horizontally-element {
+      width: 100%;
+      max-width: 350px;
+    }
   }
 
   .centered-element {
@@ -85,9 +119,30 @@
     text-transform: uppercase;
   }
 
+  .text-centered {
+    text-align: center;
+  }
+
+  .centered {
+    padding-left: 10vh;
+    padding-right: 10vh;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
   .sector {
     padding-bottom: 5vh;
   }
+
+  .element {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
 
   .centered-img {
     display: block;
@@ -97,17 +152,19 @@
     padding-bottom: 10vh;
   }
 
+
   .centered-button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-bottom: 5vh;
   }
   
   .centered-element {
     padding: 0.75em 5em;
   }
+
+
 
   /* add to cart button styling */
   .add-to-cart {
