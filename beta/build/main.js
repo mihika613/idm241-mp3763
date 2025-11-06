@@ -66,6 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const zoomLevel = 2.5; // zoom intensity
   const offset = 30; // distance from cursor to lens
 
+  // 👉 Open product page on click
+  img.addEventListener("click", () => {
+    window.open("https://francescas.com/product/QCH30875B/birth-flower-and-birthstone-charm-set", "_blank");
+  });
+
+
   img.addEventListener("mouseenter", () => {
     lens.style.display = "block";
     lens.style.opacity = "1";
