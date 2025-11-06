@@ -35,16 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
     void qtyDisplay.offsetWidth; // trigger reflow
 
     if (direction === "increase") {
-      qtyDisplay.style.animation = "numberIncrease 0.3s ease";
+      qtyDisplay.style.animation = "numberIncrease 0.6s ease";
     } else {
-      qtyDisplay.style.animation = "numberDecrease 0.3s ease";
+      qtyDisplay.style.animation = "numberDecrease 0.6s ease";
     }
   }
 
   increaseBtn.addEventListener("click", () => {
-    quantity++;
-    animateQuantityChange("increase");
-    qtyDisplay.textContent = quantity;
+    if (quantity < 100) {
+      quantity++;
+      animateQuantityChange("increase");
+      qtyDisplay.textContent = quantity;
+    }
   });
 
   decreaseBtn.addEventListener("click", () => {
@@ -74,41 +76,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   img.addEventListener("mouseenter", () => {
     lens.style.display = "block";
-    lens.style.opacity = "1";
     lens.style.backgroundImage = `url(${img.src})`;
+    lens.style.backgroundSize = `${img.width * zoomLevel}px ${img.height * zoomLevel}px`;
+    requestAnimationFrame(() => {
+      lens.style.visibility = "visible";
+      lens.style.opacity = "1";
+    });
   });
 
   img.addEventListener("mouseleave", () => {
     lens.style.opacity = "0";
-    setTimeout(() => (lens.style.display = "none"), 200);
+    lens.style.visibility = "hidden";
+    setTimeout(() => {
+      lens.style.display = "none";
+    }, 300);
   });
 
-  img.addEventListener("mousemove", moveLens);
-
-  function moveLens(e) {
+  img.addEventListener("mousemove", (e) => {
     const rect = img.getBoundingClientRect();
-    const lensSize = lens.offsetWidth;
-    const lensHalf = lensSize / 2;
+    const lensHalf = lens.offsetWidth / 2;
 
-    // Mouse coordinates relative to image
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    // Mouse position relative to image
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
 
-    // Keep the background in sync with the cursor
-    const bgX = (x / rect.width) * 100;
-    const bgY = (y / rect.height) * 100;
-    lens.style.backgroundSize = `${rect.width * zoomLevel}px ${rect.height * zoomLevel}px`;
+    // Clamp position so lens stays within image bounds
+    x = Math.max(lensHalf, Math.min(x, rect.width - lensHalf));
+    y = Math.max(lensHalf, Math.min(y, rect.height - lensHalf));
+
+    // Move lens (centered on cursor)
+    lens.style.left = `${x - lensHalf}px`;
+    lens.style.top = `${y - lensHalf}px`;
+
+    // Move background to match zoom position
+    const bgX = ((x / rect.width) * 100).toFixed(2);
+    const bgY = ((y / rect.height) * 100).toFixed(2);
     lens.style.backgroundPosition = `${bgX}% ${bgY}%`;
-
-    // Offset the lens slightly to the right and below the cursor
-    let lensLeft = e.clientX - rect.left + offset;
-    let lensTop = e.clientY - rect.top + offset;
-
-    // Prevent the lens from going outside the image container
-    if (lensLeft + lensSize > rect.width) lensLeft = rect.width - lensSize;
-    if (lensTop + lensSize > rect.height) lensTop = rect.height - lensSize;
-
-    lens.style.left = `${lensLeft}px`;
-    lens.style.top = `${lensTop}px`;
-  }
+  });
 });

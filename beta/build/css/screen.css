@@ -385,10 +385,16 @@
 .image-zoom-container {
   position: relative;
   display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  /*
+  position: relative;
+  display: inline-block;
   overflow: hidden;
-  width: 400px; /* adjust as needed */
+  width: 400px; 
   height: auto;
   margin: 0 auto;
+  */
   cursor: crosshair; /* show cursor for targeting */
 }
 
@@ -401,7 +407,6 @@
 
 /* Magnifying lens appears offset from cursor */
 .zoom-lens {
-  display: none;
   position: absolute;
   width: 180px;
   height: 180px;
@@ -412,7 +417,8 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   backdrop-filter: blur(0.5px);
 }
 
