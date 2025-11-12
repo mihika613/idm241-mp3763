@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francesca's Microinteraction</title>
+
+    <!--linking font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!--linking css stylesheets-->
+    <link rel="stylesheet" href = "css/normalize.css">
+    <link rel="stylesheet" href = "css/screen.css">
+
+</head>
+<body>
+    <h1 class="text-centered">francesca's quickview - final description</h1>
+
+    <div class="centered">
+        <br>
+        <br>
+        <div class="sector">
+            <h3>1. URL to Original Interface:</h3>
+            <a href="https://francescas.com/category/jewelry/charm-bar" target="_blank">Francesca's Charm Bar</a>
+        </div>
+
+        <div class="sector">
+            <h3>2. Triggers:</h3>
+
+            <div class="element"> 
+                <p class="list-title">"Add to Cart" button on the bottom right corner of the quickview modal in a product card</p>
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </div>
+
+            <div class="element">
+                <p class="list-title">Quantity selector on the middle of the right side of the quickview modal in a product card</p>
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </div>
+
+            <div class="element">
+                <p class="list-title">Image of product on the left side of the quickview modal</p>
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Color Selection" circular buttons on the middle of the right side of the quickview modal in a product card</p>
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Close" button on the top of the right side of the quickview modal in a product card</p>
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sector">
+            <h3>3. Rules:</h3>
+            <div class="element"> 
+                <p class="list-title">"Add to Cart" button</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Background of button fades color from black to a light beige [#fff4ee] with a 1px light pink border [#e2b5b5] over the span of 0.2 seconds</li>
+                            <li>Text changes from white to black [#000000]</li>
+                            <li>Button scales to 105% over the span of 0.2 seconds</li>
+                            <li>Button gains a dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)] over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Background color of button fades back to black [#000000], with white text [#ffffff] over the span of 0.2 seconds</li>
+                            <li>Button removes the 1px light pink border [#e2b5b5] and the dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)] over the span of 0.2 seconds</li>
+                            <li>Button scales back to 100% over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Text changes to “Adding...” with a spinning open circle indicating a loading sign</li>
+                            <li>Button scales back to 100%</li>
+                            <li>A faded diagonal line/shimmer [shade #e2b5b5] angled 120 degrees with a subtle opacity fade begins a quick looping animation, moving left to right quickly, simulating loading and progress.</li>
+                            <li>After a second, the text changes to “Added!” with a checkmark icon next to it</li>
+                            <li>The button grows to 105% and back to 100% over the span of a half of a second, as a small pop effect to indicate completion.</li>
+                            <li>Background of the button fades to a light pink [#feeced] over the span of 0.2 seconds</li>
+                            <li>Adds item to the user's cart in the database</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Quantity Selector</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Background of button fades color from white to a light beige [#fff4ee] with a 1px light pink border [#e2b5b5] over the span of 0.2 seconds</li>
+                            <li>Button scales to 105% over the span of 0.2 seconds</li>
+                            <li>Button has a dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)] over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Background color of button returns to white [#ffffff], with black text [#000000] over the span of 0.2 seconds</li>
+                            <li>Button removes the 1px light pink border [#e2b5b5] and the dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)] over the span of 0.2 seconds</li>
+                            <li>Button scales back to 100% over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>For Increasing Quantity: Next number fades from 0% opacity to 100% opacity over the span of 0.6 seconds while dropping from top of quantity selector and overlays current number.</li>
+                            <li>For Decreasing Quantity: Previous number fades from 0% opacity to 100% opacity over the span of 0.6 seconds while coming up from bottom of quantity selector and overlays current number.</li>
+                            <li>Prepares to add updated number of items to the user's cart in the database</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Image of Product</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to a cross/plus sign</li>
+                            <li>Transparent, zoomed-in magnifying circle (180px x 180px) with dark gray 1px border fades in over the span of 0.2 seconds and follows the user's mouse movement to show the image in more detail wherever the user's cursor is</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Magnifying circle fades away over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Sends user to the full product page</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Color Selection" buttons</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Circle button scales 1.25 times the original size and black 1px border grows out of the circle over the span of 0.2 seconds</li>
+                            <li>Corresponding product image fades on top of the previous image over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Circle button scales back (.25px) to original size and black 1px border shrinks into the circle, revealing the original light gray 1px border over the span of 0.2 seconds</li>
+                            <li>Selected color's product image fades on top of the previous hovered image over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Selected circle button scales 1.5 times the original size and 1px light pink border [#e2b5b5] grows out of the circle over the span of 0.2 seconds</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Close" button</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>x icon rotates 180 degrees to the right and color fades to red [#ff0000] over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>x icon rotates 180 degrees to the left and color fades back to black over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Sends user back to where they were browsing in the site's shopping category page before clicking into the quickview</li>
+                        </ul>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sector">
+            <h3>4. Feedback:</h3>
+            <div class="element"> 
+                <p class="list-title">"Add to Cart" button</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Background of button fades color from black to a light beige [#fff4ee] with a 1px light pink border [#e2b5b5] over the span of 0.2 seconds</li>
+                            <li>Text changes from white to black [#000000]</li>
+                            <li>Button scales to 105% over the span of 0.2 seconds</li>
+                            <li>Button has a dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)] over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Background color of button returns to black [#000000], with white text [#ffffff] over the span of 0.2 seconds</li>
+                            <li>Button removes the 1px light pink border [#e2b5b5] and the dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)] over the span of 0.2 seconds</li>
+                            <li>Button scales back to 100% over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Text changes to “Adding...” with a spinning open circle indicating a loading sign</li>
+                            <li>Button scales back to 100% over the span of 0.2 seconds</li>
+                            <li>A faded diagonal line/shimmer [shade #e2b5b5] begins a quick looping animation, moving left to right quickly, simulating loading and progress.</li>
+                            <li>After a second, the text changes to “Added!” with a checkmark icon next to it</li>
+                            <li>The button grows to 105% and back to 100% within the span of a half of a second, as a small pop effect to indicate completion.</li>
+                            <li>Background of the button fades to a light pink [#feeced] over the span of 0.2 seconds</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Quantity Selector</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Background of button fades color from white to a light beige [#fff4ee] with a 1px light pink border [#e2b5b5] over the span of 0.2 seconds</li>
+                            <li>Button scales to 105% over the span of 0.2 seconds</li>
+                            <li>Button has a dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)] over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Background color of button returns to white [#ffffff], with black text [#000000] over the span of 0.2 seconds</li>
+                            <li>Button removes the 1px light pink border [#e2b5b5] and the dark pinkish gray drop shadow [rgba(255, 192, 203, 0.4)] over the span of 0.2 seconds</li>
+                            <li>Button scales back to 100% over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>For Increasing Quantity: Next number fades from 0% opacity to 100% opacity over the span of 0.6 seconds while dropping from top of quantity selector and overlays current number.</li>
+                            <li>For Decreasing Quantity: Previous number fades from 0% opacity to 100% opacity over the span of 0.6 seconds while coming up from bottom of quantity selector and overlays current number.</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Image of Product</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to a cross/plus sign</li>
+                            <li>Transparent, zoomed-in magnifying circle (180px x 180px) with dark gray 1px border fades in over the span of 0.2 seconds and follows the user's mouse movement to show the image in more detail wherever the user's cursor is</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Magnifying circle fades away over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Sends user to the full product page</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Color Selection" buttons</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Circle button scales 1.25 times the original size and black 1px border grows out of the circle over the span of 0.2 seconds</li>
+                            <li>Corresponding product image fades on top of the previous image over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>Circle button scales back (.25px) to original size and black 1px border shrinks into the circle, revealing the original light gray 1px border over the span of 0.2 seconds</li>
+                            <li>Selected color's product image fades on top of the previous hovered image over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Selected circle button scales 1.5 times the original size and 1px light pink border [#e2b5b5] grows out of the circle over the span of 0.2 seconds</li>
+                        </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Close" button</p>
+                <ul>
+                    <li>Hover on</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>x icon rotates 180 degrees to the right and color fades to red [#ff0000] over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Hover off</li>
+                        <ul>
+                            <li>Cursor changes to arrow</li>
+                            <li>x icon rotates 180 degrees to the left and color fades back to black over the span of 0.2 seconds</li>
+                        </ul>
+                    <li>Click</li>
+                        <ul>
+                            <li>Sends user back to where they were browsing in the site's shopping category page before clicking into the quickview</li>
+                        </ul>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sector">
+            <h3>5. Loops & Modes:</h3>
+            <p class="list-title"><b>LOOPS:</b></p>
+
+            <div class="element">
+                <p class="list-title">"Add to Cart" button</p>
+                <ul>
+                    <li>Click</li>
+                    <ul>
+                        <li>Circle icon next to "Adding..." continues to spin until the text changes to "Added!" with a checkmark icon next to it and the item is officially added to the cart in the database</li>
+                        <li>The faded diagonal line/shimmer continues to move left to right until the text changes to "Added!" with a checkmark icon next to it and the item is officially added to the cart in the database</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Quantity Selector</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Image of Product</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Color Selection" buttons</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Close" button</p>
+                <p class="list-title">None</p>
+            </div>
+            
+            <p class="list-title"><b>MODES:</b></p>
+        
+            <div class="element"> 
+                <p class="list-title">"Add to Cart" button</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Quantity Selector</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">Image of Product</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Color Selection" buttons</p>
+                <p class="list-title">None</p>
+            </div>
+
+            <div class="element"> 
+                <p class="list-title">"Close" button</p>
+                <p class="list-title">None</p>
+            </div>
+        </div>
+
+        <p>"Add to Cart" button:</p>
+        <img class="centered-img" src="francescasaddtocart.gif" alt="GIF of Add to Cart Button">
+        <br>
+
+        <p>Quantity Selector:</p>
+        <img class="centered-img" src="francescasquantityselector.gif" alt="GIF of Quantity Selector">
+        <br>
+
+        <p>Image of Product:</p>
+        <img class="centered-img" src="francescasproductimagezoom.gif" alt="GIF of Image of Product">
+        <br>
+
+        <p>"Color selection" buttons:</p>
+        <img class="centered-img" src="francescascolorselection.gif" alt="GIF of Color Selection buttons">
+        <br>
+
+        <p>"Close" button:</p>
+        <img class="centered-img" src="francescasclosebutton.gif" alt="GIF of Close button">
+        <br>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
