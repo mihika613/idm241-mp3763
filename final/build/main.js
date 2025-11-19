@@ -139,61 +139,77 @@ quickviewOverlay.addEventListener("click", (e) => {
   }
 });
 
-// --- Color Selection ---
-document.querySelectorAll(".color-circle").forEach(circle => {
-  circle.addEventListener("click", () => {
-    document.querySelectorAll(".color-circle").forEach(c => c.classList.remove("selected"));
-    circle.classList.add("selected");
-  });
+// ---------------------------
+// COLOR SELECTION BEHAVIOR
+// ---------------------------
+
+const productImage = document.getElementById("productImage");
+const productImageFade = document.getElementById("productImageFade");
+const colorCircles = document.querySelectorAll(".color-circle");
+
+let selectedColorImage = null; // stores the currently selected image
+
+
+
+// ⭐ DEFAULT SELECT FIRST COLOR ON PAGE LOAD
+window.addEventListener("DOMContentLoaded", () => {
+    const firstColor = colorCircles[0];
+    selectedColorImage = firstColor.getAttribute("data-image");
+
+    // Set initial product image
+    productImage.src = selectedColorImage;
+
+    // Mark first circle as selected (scale + border)
+    firstColor.classList.add("selected");
 });
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const colorCircles = document.querySelectorAll(".color-circle");
-  const productImage = document.getElementById("productImage");
-
-  colorCircles.forEach(circle => {
-    // Hover effect
-    circle.addEventListener("mouseenter", () => {
-      const newImage = circle.getAttribute("data-image");
-      if (newImage) {
-        // Fade out
-        productImage.classList.add("fade-out");
-
-        setTimeout(() => {
-          // Change image
-          productImage.src = newImage;
-          // Fade back in
-          productImage.classList.remove("fade-out");
-        }, 200); // match the CSS transition
-      }
-    });
-
-    // Optional: click to select
-    circle.addEventListener("click", () => {
-      colorCircles.forEach(c => c.classList.remove("selected"));
-      circle.classList.add("selected");
-    });
-  });
-});
-
-
-const colorCircles = document.querySelectorAll('.color-circle');
-const productImage = document.getElementById('productImage');
-const fadeImage = document.getElementById('productImageFade');
-
+// ⭐ ADD HOVER + CLICK BEHAVIOR
 colorCircles.forEach(circle => {
-  circle.addEventListener('mouseenter', () => {
-    const newImage = circle.getAttribute('data-image');
-    fadeImage.src = newImage;
-    fadeImage.style.opacity = 1;
 
-    // After fade-in, swap the base image once the transition ends
-    fadeImage.addEventListener('transitionend', function handleTransition() {
-      productImage.src = newImage;
-      fadeImage.style.opacity = 0;
-      fadeImage.removeEventListener('transitionend', handleTransition);
+    // HOVER ON → Show that circle’s image
+    circle.addEventListener("mouseenter", () => {
+        const hoverImage = circle.getAttribute("data-image");
+        fadeToImage(hoverImage);
     });
-  });
+
+    // HOVER OFF → Return to selected image
+    circle.addEventListener("mouseleave", () => {
+        fadeToImage(selectedColorImage);
+    });
+
+    // CLICK → Set this circle as the selected one
+    circle.addEventListener("click", () => {
+        const newImage = circle.getAttribute("data-image");
+        selectedColorImage = newImage;   // update active image
+
+        fadeToImage(selectedColorImage);
+
+        // Remove selected style from all circles
+        colorCircles.forEach(c => c.classList.remove("selected"));
+
+        // Add selected style to clicked circle
+        circle.classList.add("selected");
+    });
+});
+
+
+
+// ---------------------------
+// SMOOTH FADE IMAGE FUNCTION
+// ---------------------------
+function fadeToImage(newSrc) {
+    productImageFade.src = newSrc;
+    productImageFade.classList.add("active");
+
+    setTimeout(() => {
+        productImage.src = newSrc;
+        productImageFade.classList.remove("active");
+    }, 200); // matches your fade duration
+}
+
+
+document.getElementById("closeQuickview").addEventListener("click", () => {
+  window.open("https://francescas.com/category/jewelry/charm-bar", "_blank");
 });
