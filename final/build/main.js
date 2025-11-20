@@ -151,7 +151,7 @@ let selectedColorImage = null; // stores the currently selected image
 
 
 
-// ⭐ DEFAULT SELECT FIRST COLOR ON PAGE LOAD
+// DEFAULT SELECT FIRST COLOR ON PAGE LOAD
 window.addEventListener("DOMContentLoaded", () => {
     const firstColor = colorCircles[0];
     selectedColorImage = firstColor.getAttribute("data-image");
@@ -167,17 +167,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ⭐ ADD HOVER + CLICK BEHAVIOR
 colorCircles.forEach(circle => {
-
-    // HOVER ON → Show that circle’s image
-    circle.addEventListener("mouseenter", () => {
-        const hoverImage = circle.getAttribute("data-image");
-        fadeToImage(hoverImage);
-    });
-
-    // HOVER OFF → Return to selected image
-    circle.addEventListener("mouseleave", () => {
-        fadeToImage(selectedColorImage);
-    });
 
     // CLICK → Set this circle as the selected one
     circle.addEventListener("click", () => {
