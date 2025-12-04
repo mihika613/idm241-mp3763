@@ -195,7 +195,7 @@ function fadeToImage(newSrc) {
     setTimeout(() => {
         productImage.src = newSrc;
         productImageFade.classList.remove("active");
-    }, 600); // matches your fade duration
+    }, 1200); // matches your fade duration
 }
 
 
